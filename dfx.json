@@ -1,0 +1,25 @@
+{
+  "canisters": {
+    "publisher": {
+      "main": "src/publisher.mo",
+      "type": "motoko"
+    },
+    "subscriber": {
+      "main": "example/subscriber.mo",
+      "type": "motoko"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "vessel sources"
+    }
+  },
+  "dfx": "0.7.2",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
