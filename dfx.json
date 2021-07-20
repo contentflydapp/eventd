@@ -1,12 +1,10 @@
 {
   "canisters": {
     "publisher": {
-      "main": "src/publisher.mo",
-      "type": "motoko"
+      "main": "example/publisher-manager.mo"
     },
     "subscriber": {
-      "main": "example/subscriber.mo",
-      "type": "motoko"
+      "main": "example/subscriber.mo"
     }
   },
   "defaults": {
