@@ -4,6 +4,10 @@
 
 Publisher Subscriber (Pub/Sub) event driven architecture for Motoko
 
+## Getting started
+
+See main source is in /src. Follow example code in /example for using it in Canister actor.
+
 ## To run unit tests in canisters
 
 It uses Motoko Matchers as described in https://github.com/kritzcreek/ic101 for testing directly on local DFX canister
