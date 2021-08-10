@@ -25,6 +25,17 @@ module {
       subscribersMap.size();
     };
 
+    public func numSubscribersForTopic(topic: Topic) : Nat {
+      switch (subscribersMap.get(topic)) {
+        case null {
+          0;
+        };
+        case (?value) { 
+          value.size();
+        };
+      }
+    };
+
     public func subscribe(myTopic: Topic, subscriber : Subscriber) {
       var subscribers = do {
           switch (subscribersMap.get(myTopic)) {

@@ -27,10 +27,25 @@ actor {
         M.attempt(size, M.equals(T.nat(1)));
       });
 
-      it.should("registry size should be 2 after 2nd subscriber", func () : async C.TestResult {
+      it.should("num subscribers for topic newUserAccountCreated should be 1 after 1st subscriber", func () : async C.TestResult {
+        let size = await Publisher.numSubscribersForTopic(#newUserAccountCreated(0));
+        M.attempt(size, M.equals(T.nat(1)));
+      });
+
+      it.should("registry size should be 1 after 2nd subscriber", func () : async C.TestResult {
         await Subscriber2.init(#newUserAccountCreated(0));
         let size = await Publisher.registryTopicSize();
         M.attempt(size, M.equals(T.nat(1)));
+      });
+
+      it.should("num subscribers for topic newUserAccountCreated should be 2 after 2nd subscriber", func () : async C.TestResult {
+        let size = await Publisher.numSubscribersForTopic(#newUserAccountCreated(0));
+        M.attempt(size, M.equals(T.nat(2)));
+      });
+
+      it.should("num subscribers for topic newContentBriefCreated should be 0", func () : async C.TestResult {
+        let size = await Publisher.numSubscribersForTopic(#newContentBriefCreated(0));
+        M.attempt(size, M.equals(T.nat(0)));
       });
 
       it.should("publish event newUserAccountCreated should trigger change to Subscriber1", func () : async C.TestResult {

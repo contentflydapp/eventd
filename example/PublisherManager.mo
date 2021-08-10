@@ -16,7 +16,11 @@ actor PublisherManager {
   };
 
   public query func registryTopicSize() : async Nat {
-    publisher.registryTopicSize()
+    publisher.registryTopicSize();
   };
+
+  public query func numSubscribersForTopic(topic: Topic): async Nat {
+    publisher.numSubscribersForTopic(topic);
+  }
 
 }
