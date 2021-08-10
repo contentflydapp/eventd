@@ -5,7 +5,7 @@ import TrieMap "mo:base/TrieMap";
 import log "mo:base/Debug";
 
 // Local lib
-import Event "event";
+import Event "Event";
 
 module {
 
@@ -21,7 +21,7 @@ module {
     type TopicSubscriberMap<X, Y> = TrieMap.TrieMap<X, Y>;
     var subscribersMap: TopicSubscriberMap<Topic, [Subscriber]> = TrieMap.TrieMap<Topic, [Subscriber]>(Event.topicEqual, Event.topicHash);
 
-    public func registrySize() : Nat {
+    public func registryTopicSize() : Nat {
       subscribersMap.size();
     };
 

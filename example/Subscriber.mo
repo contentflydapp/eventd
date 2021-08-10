@@ -15,7 +15,7 @@ actor Subscriber {
     }
   };
 
-  public func init(myTopic : Publisher.Topic) {
+  public func init(myTopic : Publisher.Topic): async () {
     Publisher.subscribe(myTopic, {callback = updateCount});
   };
 

@@ -1,4 +1,4 @@
-import Publishers "../src/publishers";
+import Publishers "../src/Publishers";
 
 actor PublisherManager {
 
@@ -15,8 +15,8 @@ actor PublisherManager {
     await publisher.publish(topic);
   };
 
-  public query func registrySize() : async Nat {
-    publisher.registrySize()
+  public query func registryTopicSize() : async Nat {
+    publisher.registryTopicSize()
   };
 
 }

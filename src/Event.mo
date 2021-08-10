@@ -11,7 +11,7 @@ module {
     #newContentBriefCreated : BriefId
   };
 
-    // topicText -- for hashing the topic name
+  // topicText -- for hashing the topic name
   func topicText(topic : Topic) : Text {
     switch topic {
       case (#newUserAccountCreated id) "#newUserAccountCreated";
@@ -24,7 +24,7 @@ module {
     Text.hash(topicText(topic));
   };
 
-// TopicSubscriberMap topic equal
+  // TopicSubscriberMap topic equal
   public func topicEqual(topic1 : Topic, topic2 : Topic) : Bool {
     topicText(topic1) == topicText(topic2);
   };
