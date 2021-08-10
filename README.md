@@ -1,5 +1,7 @@
 # Eventd - PubSub for Content Fly in Motoko
 
+[![Eventd CI / CD](https://github.com/contentflydapp/eventd/actions/workflows/dev.yml/badge.svg?branch=main)](https://github.com/contentflydapp/eventd/actions/workflows/dev.yml)
+
 Publisher Subscriber (Pub/Sub) event driven architecture for Motoko
 
 ## To run unit tests in canisters
