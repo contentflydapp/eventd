@@ -3,7 +3,6 @@ import C "mo:matchers/Canister";
 import M "mo:matchers/Matchers";
 import T "mo:matchers/Testable";
 
-
 // Test subject
 import Publisher "canister:publisher";
 import Subscriber1 "canister:subscriber1";

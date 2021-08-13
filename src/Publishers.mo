@@ -16,7 +16,6 @@ module {
   };
 
   public class Publisher() {
-
     // PubSub Registry Storage
     type TopicSubscriberMap<X, Y> = TrieMap.TrieMap<X, Y>;
     var subscribersMap: TopicSubscriberMap<Topic, [Subscriber]> = TrieMap.TrieMap<Topic, [Subscriber]>(Event.topicEqual, Event.topicHash);
