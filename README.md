@@ -7,9 +7,9 @@ Event driven architecture is great for decoupling dependencies in a system such 
 
 ## Purpose
 
-Eventd is created as core infrastructure of Content Fly in order promote the usage of PubSub and decoupling of system through events. The future use cases of it could involve:
+Eventd is created as core infrastructure of Content Fly in order promote the use of PubSub and decoupling of system through events. The future use cases of it involves:
 
--   Sending any type notifications to user when a new user has signned up or a user has made a comment. It could be email, browser, mobile push or any new type of notification native to Blockchina.
+-   Sending any type of notifications to user when a new user has signned up or a user has made a comment. It could be email, browser, mobile push or any new type of notification native to blockchain.
 -   Triggering of a separate backend canister to process user event. A potential future use case could be machine learning based recommendation system running on Canister.
 
 ## Design philosophy
