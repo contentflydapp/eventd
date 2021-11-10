@@ -5,10 +5,18 @@ module {
   
   public type UserAccountId = Nat;
   public type BriefId = Nat;
+  public type JobId = Nat32;
+  public type UserId = Nat32;
+
+  public type NewChatRoomEvent = {
+    jobId: JobId;
+    userId: UserId;
+  };
 
   public type Topic = {
     #newUserAccountCreated : UserAccountId;
-    #newContentBriefCreated : BriefId
+    #newContentBriefCreated : BriefId;
+    #newChatRoomCreated : NewChatRoomEvent;
   };
 
   // topicText -- for hashing the topic name
@@ -16,6 +24,7 @@ module {
     switch topic {
       case (#newUserAccountCreated id) "#newUserAccountCreated";
       case (#newContentBriefCreated id) "#newContentBriefCreated";
+      case (#newChatRoomCreated payload) "#newChatRoomCreated";
     }
   };
 

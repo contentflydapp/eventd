@@ -1,29 +1,29 @@
 {
-    "canisters": {
-        "publisher": {
-            "main": "example/PublisherManager.mo"
-        },
-        "subscriber1": {
-            "main": "example/Subscriber.mo"
-        },
-        "subscriber2": {
-            "main": "example/Subscriber.mo"
-        },
-        "publisher_test": {
-            "main": "test/TestPublishers.mo"
-        }
+  "canisters": {
+    "publisher": {
+      "main": "example/PublisherManager.mo"
     },
-    "defaults": {
-        "build": {
-            "packtool": "vessel sources"
-        }
+    "subscriber1": {
+      "main": "example/Subscriber.mo"
     },
-    "dfx": "0.8.1",
-    "networks": {
-        "local": {
-            "bind": "127.0.0.1:8000",
-            "type": "ephemeral"
-        }
+    "subscriber2": {
+      "main": "example/Subscriber.mo"
     },
-    "version": 1
+    "publisher_test": {
+      "main": "test/TestPublishers.mo"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "vessel sources"
+    }
+  },
+  "dfx": "0.8.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
 }
