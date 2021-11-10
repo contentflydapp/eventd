@@ -5,11 +5,11 @@ module {
   
   public type UserAccountId = Nat;
   public type BriefId = Nat;
-  public type JobId = Nat32;
+  public type JobIdText = Text;
   public type UserId = Nat32;
 
   public type NewChatRoomEvent = {
-    jobId: JobId;
+    jobId: JobIdText;
     userId: UserId;
   };
 

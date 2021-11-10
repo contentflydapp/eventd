@@ -10,6 +10,7 @@ import Event "Event";
 module {
 
   public type Topic = Event.Topic;
+  public type NewChatRoomEvent = Event.NewChatRoomEvent;
 
   public type Subscriber = {
     callback : shared Topic -> ();
