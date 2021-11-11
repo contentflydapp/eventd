@@ -1,8 +1,11 @@
 // Base lib
 import Array "mo:base/Array";
 import Trie "mo:base/Trie";
+import TrieSet "mo:base/TrieSet";
 import TrieMap "mo:base/TrieMap";
 import log "mo:base/Debug";
+import Text "mo:base/Text";
+import Hash "mo:base/Hash";
 
 // Local lib
 import Event "Event";
@@ -13,6 +16,7 @@ module {
   public type NewChatRoomEvent = Event.NewChatRoomEvent;
 
   public type Subscriber = {
+    id : Text;
     callback : shared Topic -> ();
   };
 
@@ -50,8 +54,10 @@ module {
           }
       };
 
-      subscribers := Array.append<Subscriber>(subscribers, [subscriber]);
-      subscribersMap.put(myTopic, subscribers);
+      var subscriberSet : TrieSet.Set<Subscriber> = TrieSet.fromArray<Subscriber>(subscribers, subscriberHash, subscriberEqual);
+      subscriberSet := TrieSet.put<Subscriber>(subscriberSet, subscriber, subscriberHash(subscriber), subscriberEqual);
+
+      subscribersMap.put(myTopic, TrieSet.toArray<Subscriber>(subscriberSet));
     };
 
     public func publish(topic : Topic) : async () {
@@ -64,6 +70,14 @@ module {
         case null {
         }
       }
+    };
+
+    func subscriberHash(sub: Subscriber) : Hash.Hash {
+      Text.hash(sub.id);
+    };
+
+    func subscriberEqual(sub1 : Subscriber, sub2 : Subscriber) : Bool {
+      sub1.id == sub2.id;
     };
 
   };

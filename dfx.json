@@ -4,13 +4,16 @@
       "main": "example/PublisherManager.mo"
     },
     "subscriber1": {
-      "main": "example/Subscriber.mo"
+      "main": "example/Subscriber.mo",
+      "dependencies": ["publisher"]
     },
     "subscriber2": {
-      "main": "example/Subscriber.mo"
+      "main": "example/Subscriber.mo",
+      "dependencies": ["publisher"]
     },
     "publisher_test": {
-      "main": "test/TestPublishers.mo"
+      "main": "test/TestPublishers.mo",
+      "dependencies": ["publisher", "subscriber1", "subscriber2"]
     }
   },
   "defaults": {

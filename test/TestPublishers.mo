@@ -21,7 +21,7 @@ actor {
       });
 
       it.should("registry size should be 1 after 1st subscriber", func () : async C.TestResult {
-        await Subscriber1.init(#newUserAccountCreated(0));
+        await Subscriber1.init(#newUserAccountCreated(0), "test1");
         let size = await Publisher.registryTopicSize();
         M.attempt(size, M.equals(T.nat(1)));
       });
@@ -32,7 +32,7 @@ actor {
       });
 
       it.should("registry size should be 1 after 2nd subscriber", func () : async C.TestResult {
-        await Subscriber2.init(#newUserAccountCreated(0));
+        await Subscriber2.init(#newUserAccountCreated(0), "test2");
         let size = await Publisher.registryTopicSize();
         M.attempt(size, M.equals(T.nat(1)));
       });
