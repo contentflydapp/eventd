@@ -15,7 +15,7 @@ jobs:
       - name: Install DFX
         run: echo y | sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
         env:
-          DFX_VERSION: 0.8.1
+          DFX_VERSION: 0.8.4
       - run: dfx start --emulator --clean --background
       - name: Download vessel package management
         run: curl -L -o /usr/local/bin/vessel https://github.com/dfinity/vessel/releases/download/v0.6.2/vessel-linux64
